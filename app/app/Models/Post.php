@@ -11,4 +11,14 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Post extends Model 
 {
     use HasFactory, Sluggable;
+
+     // eloquent sluggable
+     public function sluggable(): array
+     {
+         return [
+             'slug' => [
+                 'source' => 'title'
+             ]
+         ];
+     }
 }
