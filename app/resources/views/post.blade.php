@@ -2,13 +2,17 @@
 
 @section('dashboard-container')
 <div class="container mt-5">
-    <h3 class="text-uppercase">Buat Postingan Baru</h3>
+    <h3 class="text-uppercase">Input The Product</h3>
+    <h5 class="fw-bold">Instruction</h5>
+    <ul>
+        <li>Fill the title form then 'click' tab on keybord</li>
+    </ul>
 
     <div class="col-lg-8 mt-3">
         <form action="/post" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="title">Judul</label>
+                <label for="title">Title</label>
                 <input type="text" class="form-control mt-2 @error('title') is-invalid @enderror" id="title" name="title" required>
                 @error('title')
                 <div class="invalid-feedback">
